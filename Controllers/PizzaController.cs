@@ -10,13 +10,13 @@ namespace la_mia_pizzeria_static.Controllers
 
         public PizzaController()
         {
-            Db = new PizzaDbContext();  
+            Db = new PizzaDbContext();
         }
 
 
         public IActionResult Index()
         {
-            
+
             List<Pizza> pizzaList = Db.Pizzas.ToList();
 
             return View(pizzaList);
@@ -25,7 +25,7 @@ namespace la_mia_pizzeria_static.Controllers
         public IActionResult Show(int id)
         {
 
-            Pizza pizza = Db.Pizzas.Where(p => p.Id == id).FirstOrDefault();  
+            Pizza pizza = Db.Pizzas.Where(p => p.Id == id).FirstOrDefault();
 
             return View(pizza);
         }
@@ -53,5 +53,5 @@ namespace la_mia_pizzeria_static.Controllers
             return RedirectToAction("Index");
         }
 
-      
+    }  
 }
